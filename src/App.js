@@ -40,10 +40,10 @@ const App = () => {
       <div className="app">
         <Navbar />
         <Switch>
-          <Route exact path={"/"} component={Index} />
-           <PublicRoute path="/signup" component={Signup} />
-           <PublicRoute path="/login" component={Login} />     
-           <PrivateRoute path="/home" component={Home} />
+          <Route exact path={"/"}><Index /></Route>
+           <PublicRoute path="/signup"><Signup /></PublicRoute>
+           <PublicRoute path="/login"><Login /></PublicRoute>
+           <PrivateRoute path="/home"><Home /></PrivateRoute>
            <PrivateRoute exact path="/beers"><Beers/></PrivateRoute>
            {/* <PrivateRoute path="/favorites" component={Favorites} /> */}
            {/* <PrivateRoute path="/recommended" component={Recommended} /> */}

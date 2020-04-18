@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './Login.css';
 import auth from '../../lib/auth-service';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { withAuth } from '../../lib/authContext';
 
 const Login = (props) => {
+  const history = useHistory();
   const [state, setState] = useState({
     username: "",
     password: "",
@@ -18,7 +19,7 @@ const Login = (props) => {
     auth.login({ username, password })
     .then((user) => {
       props.setUser(user);
-      props.history.push('/home'); 
+      history.push('/home'); 
     })
     .catch(error => {
       console.error('Error');

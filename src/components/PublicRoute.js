@@ -3,12 +3,12 @@ import {Route, Redirect} from 'react-router-dom';
 import { withAuth } from '../lib/authContext';
 
 const PublicRoute = (props) => {
-  const {path, component:Component, isLogged, ...rest} = props;
+  const {isLogged} = props;
 
   return (
-    <Route  {...rest } path={path} render={(props) => {
-      return isLogged ? <Redirect to={'/home'} /> : <Component {...props} />
-    }} />
+    <>
+      {isLogged ? <Redirect to={'/home'} /> : <Route {...props}>{props.children}</Route>}
+    </>
   );
 }
 
