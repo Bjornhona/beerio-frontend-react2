@@ -1,0 +1,14 @@
+/* ---- navbar ---- */
+
+div.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  background-color: white;
+  padding: 15px 30px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: overflow;
+  width: 100%;
+}
