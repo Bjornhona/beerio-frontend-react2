@@ -9,11 +9,11 @@ import Index from './pages/Index';
 import Signup from './pages/signup/Signup';
 import Login from './pages/login/Login';
 import Home from './pages/home/Home';
-// import Beers from './pages/Beers';
+import Beers from './pages/beers/Beers';
 // import Favorites from './pages/Favorites';
 // import Recommended from './pages/Recommended';
 // import NotFound from './pages/NotFound';
-// import Beer from './pages/Beer';
+import Beer from './pages/beer/Beer';
 // import Play from './pages/Play';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -40,16 +40,16 @@ const App = () => {
       <div className="app">
         <Navbar />
         <Switch>
-          <Route exact path="/" component={Index} />
+          <Route exact path={"/"} component={Index} />
            <PublicRoute path="/signup" component={Signup} />
            <PublicRoute path="/login" component={Login} />     
            <PrivateRoute path="/home" component={Home} />
-           {/* <PrivateRoute exact path="/beers" component={Beers} />
-           <PrivateRoute path="/favorites" component={Favorites} />
-           <PrivateRoute path="/recommended" component={Recommended} />
-           <PrivateRoute path="/beers/:id" component={Beer} />
-           <PrivateRoute path="/play" component={Play} />
-           <Route component={NotFound} /> */}
+           <PrivateRoute exact path="/beers"><Beers/></PrivateRoute>
+           {/* <PrivateRoute path="/favorites" component={Favorites} /> */}
+           {/* <PrivateRoute path="/recommended" component={Recommended} /> */}
+           <PrivateRoute path="/beers/:id"><Beer /></PrivateRoute>
+           {/* <PrivateRoute path="/play" component={Play} /> */}
+           {/* <Route component={NotFound} /> */} */}
          </Switch>
       </div>
     </AuthContext>

@@ -1,0 +1,44 @@
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  background-image: linear-gradient(#eee6da, #d2bb93);
+  box-shadow: 2px 2px 10px #99804e;
+  border: none;
+  border-radius: 30px;
+  color: #513e29;
+  margin: 15px 0;
+  height: 120px;
+  transition-duration: 1s;
+}
+
+.home-container:hover {
+  color: white;
+  background-image: linear-gradient(#d2bb93, #eee6da);
+  transition-duration: 0s;
+}
+
+.home-icon {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .home-container {
+    padding: 15px 30px;
+    width: 700px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .home-container {
+    padding: 15px 20px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  .home-container {
+    padding: 10px;
+    width: 100%;
+  }
+}
