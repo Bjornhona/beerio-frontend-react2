@@ -6,7 +6,6 @@ import BeerItem from '../../components/beer-item/BeerItem';
 
 const Beer = () => {
   let match = useRouteMatch();
-  // const history = useHistory();
   const {id} = match.params;
 
   return (

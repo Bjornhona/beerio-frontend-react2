@@ -9,14 +9,19 @@ const Favorites = (props) => {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    update();
-  }, []);
+    let ignore = false;
 
-  const update = () => {
-    beerService.getFavorites()
-    .then(result => setFavorites(result))
+    const fetchFavorites = () => beerService.getFavorites()
+    .then(result => {
+      if (!ignore) {
+        setFavorites(result);
+      }
+    })
     .catch(error => console.error('Error'));
-  }
+    fetchFavorites();
+
+    return () => {ignore = true};
+  }, []);
 
   return (
     <div className="index-div section">
