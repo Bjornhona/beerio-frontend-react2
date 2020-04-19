@@ -14,7 +14,7 @@ import Favorites from './pages/favorites/Favorites';
 import Recommended from './pages/recommended/Recommended';
 // import NotFound from './pages/NotFound';
 import Beer from './pages/beer/Beer';
-// import Play from './pages/Play';
+import Play from './pages/play/Play';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
@@ -48,7 +48,7 @@ const App = () => {
            <PrivateRoute path="/favorites" component={Favorites} />
            <PrivateRoute path="/recommended" component={Recommended} />
            <PrivateRoute path="/beers/:id"><Beer /></PrivateRoute>
-           {/* <PrivateRoute path="/play" component={Play} /> */}
+           <PrivateRoute path="/play" component={Play} />
            {/* <Route component={NotFound} /> */}
          </Switch>
       </div>
