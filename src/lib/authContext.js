@@ -26,8 +26,8 @@ const AuthContext = (props) => {
       await authService.me()
       .then((user) => {if (!ignore) {
         setUser(user);
-        setIsLoading(false);
         setIsLogged(true);
+        setIsLoading(false);
       }})
       .catch((error) => {
         setIsLogged(false);

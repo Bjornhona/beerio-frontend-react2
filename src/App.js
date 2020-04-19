@@ -40,7 +40,7 @@ const App = () => {
       <div className="app">
         <Navbar />
         <Switch>
-          <Route exact path={"/"}><Index /></Route>
+          <Route exact path="/"><Index /></Route>
            <PublicRoute path="/signup"><Signup /></PublicRoute>
            <PublicRoute path="/login"><Login /></PublicRoute>
            <PrivateRoute path="/home"><Home /></PrivateRoute>
@@ -49,7 +49,7 @@ const App = () => {
            {/* <PrivateRoute path="/recommended" component={Recommended} /> */}
            <PrivateRoute path="/beers/:id"><Beer /></PrivateRoute>
            {/* <PrivateRoute path="/play" component={Play} /> */}
-           {/* <Route component={NotFound} /> */} */}
+           {/* <Route component={NotFound} /> */}
          </Switch>
       </div>
     </AuthContext>
