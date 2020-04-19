@@ -1,30 +1,36 @@
 import React from 'react';
 import './BeersItem.css';
 import { Link } from 'react-router-dom';
-// import Heart from './Heart';
+import Heart from './../heart/Heart';
 
-const BeersItem = ({item}) => {
-  item.isOrganic = 'Y' ? "Yes" : "No";
-  const style = item.style && item.style.category.name;
-  const icon = item.labels.icon;
+const BeersItem = ({id, name, isOrganic, icon, style}) => {
+  console.log(icon);
+  console.log(isOrganic)
+  // const style = item.style && item.style.category.name;
 
   return (
     <div className='beers-container'>
       <div className='img-name-div'>
         <div className="beers-img">{icon && <img src={icon} alt="No pic" />}</div>
         <div className="beer-name">
-          <h5>{item.name}</h5>
+          <h5>{name}</h5>
           <p>{style}</p>
         </div>
       </div>
       <div className="organic-heart">
         <div className="heart-div" >
-          {/* <Heart beerData={item} /> */}
-          <Link to={`/beers/${item.id}`} >
+          <Heart
+            id={id}
+            name={name}
+            isOrganic={isOrganic}
+            icon={icon}
+            style={style}
+          />
+          <Link to={`/beers/${id}`} >
             <span role="img" className="arrow" aria-label="right-angle-bracket" >〉</span>
           </Link>
         </div>
-        <div className="organic"><p><strong>Organic: </strong>{item.isOrganic}</p></div>
+        <div className="organic"><p><strong>Organic: </strong>{isOrganic}</p></div>
       </div>
     </div>
   )
