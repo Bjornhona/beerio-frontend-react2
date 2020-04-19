@@ -7,7 +7,6 @@ import './Favorites.css';
 
 const Favorites = (props) => {
   const [favorites, setFavorites] = useState([]);
-  // const [isFavorite, setIsFavorite] = useState(true);
 
   useEffect(() => {
     update();
@@ -25,11 +24,8 @@ const Favorites = (props) => {
         <Link to='/home' className="menu-button back"><span role="img" aria-label="left-angle-bracket">〈</span></Link>
         <h4>My Favorite Beers</h4>
       </div>
-      {!favorites ? <p>You have not selected any favorites yet.</p> : 
+      {favorites.length < 1 ? <p>You have not selected any favorites yet.</p> : 
         favorites.map(item => {
-          // console.log(item);
-          console.log(item.icon);
-          console.log(item.isOrganic)
           const {id, name, isOrganic, icon, style} = item;
           return (
             <BeersItem 

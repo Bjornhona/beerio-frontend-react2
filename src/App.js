@@ -11,7 +11,7 @@ import Login from './pages/login/Login';
 import Home from './pages/home/Home';
 import Beers from './pages/beers/Beers';
 import Favorites from './pages/favorites/Favorites';
-// import Recommended from './pages/Recommended';
+import Recommended from './pages/recommended/Recommended';
 // import NotFound from './pages/NotFound';
 import Beer from './pages/beer/Beer';
 // import Play from './pages/Play';
@@ -46,7 +46,7 @@ const App = () => {
            <PrivateRoute path="/home"><Home /></PrivateRoute>
            <PrivateRoute exact path="/beers"><Beers/></PrivateRoute>
            <PrivateRoute path="/favorites" component={Favorites} />
-           {/* <PrivateRoute path="/recommended" component={Recommended} /> */}
+           <PrivateRoute path="/recommended" component={Recommended} />
            <PrivateRoute path="/beers/:id"><Beer /></PrivateRoute>
            {/* <PrivateRoute path="/play" component={Play} /> */}
            {/* <Route component={NotFound} /> */}

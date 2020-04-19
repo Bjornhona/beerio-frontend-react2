@@ -50,19 +50,14 @@ const Beers = () => {
       newData.map((item) => {      
         const style = item.style && item.style.category.name;
         item.isOrganic = 'Y' ? "Yes" : "No";
-        console.log(item.icon);
-        console.log(item.isOrganic)
         return (
           <BeersItem
             key={item.id}
             id={item.id}
             name={item.name}
             isOrganic={item.isOrganic}
-            // isFavorite={item.favorite}
             icon={item.labels.icon}
             style={style}
-            // data={newData}
-            // favorites={favorites}
           />
         )
       })}
@@ -71,11 +66,3 @@ const Beers = () => {
 }
 
 export default withAuth(Beers);
-
-// labels:
-// icon: "https://brewerydb-images.s3.amazonaws.com/beer/UJGpVS/upload_K4w7gB-icon.png"
-// medium: "https://brewerydb-images.s3.amazonaws.com/beer/UJGpVS/upload_K4w7gB-medium.png"
-// large: "https://brewerydb-images.s3.amazonaws.com/beer/UJGpVS/upload_K4w7gB-large.png"
-// contentAwareIcon: "https://brewerydb-images.s3.amazonaws.com/beer/UJGpVS/upload_K4w7gB-contentAwareIcon.png"
-// contentAwareMedium: "https://brewerydb-images.s3.amazonaws.com/beer/UJGpVS/upload_K4w7gB-contentAwareMedium.png"
-// contentAwareLarge: "https://brewerydb-images.s3.amazonaws.com/beer/UJGpVS/upload_K4w7gB-contentAwareLarge.png"

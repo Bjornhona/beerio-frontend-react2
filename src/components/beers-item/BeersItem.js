@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 import Heart from './../heart/Heart';
 
 const BeersItem = ({id, name, isOrganic, icon, style}) => {
-  console.log(icon);
-  console.log(isOrganic)
-  // const style = item.style && item.style.category.name;
 
   return (
     <div className='beers-container'>
