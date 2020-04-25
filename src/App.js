@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import PrivateRoute from './components/PrivateRoute'
@@ -23,8 +23,11 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 import AuthContext from './lib/authContext';
+import NavItem from './components/navbar/nav-item/NavItem';
+import Dropdown from './components/navbar/dropdown/Dropdown';
 
 library.add(faPlayCircle);
 library.add(faSearch);
@@ -32,13 +35,36 @@ library.add(faHeart);
 library.add(faStar);
 library.add(faThumbsUp);
 library.add(faUser);
+library.add(faBars);
 
 const App = () => {
+  const node = useRef();
+
+  // useEffect(() => {
+  //   document.addEventListener("mousedown", handleClick);
+
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClick);
+  //   };
+  // }, []);
+
+  // const handleClick = (event) => {
+  //   if (node.current.contains(event.target)) {
+  //     // inside click
+  //     return;
+  //   }
+  //   // outside click 
+  //   //navigation menuToggleRight input.checkbox
+  // };
 
   return (
     <AuthContext>
       <div className="app">
-        <Navbar />
+        <Navbar node={node}>
+          <NavItem icon={faBars}><Dropdown menuLeft /></NavItem>
+          <h2 className='nav-headline'>Beerio</h2>
+          <NavItem icon={faUser}><Dropdown menuRight /></NavItem>
+        </Navbar>
         <Switch>
           <Route exact path="/"><Index /></Route>
            <PublicRoute path="/signup"><Signup /></PublicRoute>
