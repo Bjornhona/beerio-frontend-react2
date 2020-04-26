@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import PrivateRoute from './components/PrivateRoute'
@@ -39,6 +39,8 @@ library.add(faBars);
 
 const App = () => {
   const node = useRef();
+  const [openLeft, setOpenLeft] = useState(false);
+  const [openRight, setOpenRight] = useState(false);
 
   // useEffect(() => {
   //   document.addEventListener("mousedown", handleClick);
@@ -57,13 +59,18 @@ const App = () => {
   //   //navigation menuToggleRight input.checkbox
   // };
 
+
   return (
     <AuthContext>
       <div className="app">
         <Navbar node={node}>
-          <NavItem icon={faBars}><Dropdown menuLeft /></NavItem>
+          <NavItem icon={faBars} isOpen={openLeft} handleOpen={() => setOpenLeft(!openLeft)}>
+            <Dropdown menuLeft handleClickItem={() => setOpenLeft(false)} />
+          </NavItem>
           <h2 className='nav-headline'>Beerio</h2>
-          <NavItem icon={faUser}><Dropdown menuRight /></NavItem>
+          <NavItem icon={faUser} isOpen={openRight} handleOpen={() => setOpenRight(!openRight)}>
+            <Dropdown menuRight handleClickItem={() => setOpenRight(false)} />
+          </NavItem>
         </Navbar>
         <Switch>
           <Route exact path="/"><Index /></Route>

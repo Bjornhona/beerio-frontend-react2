@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './NavItem.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const NavItem = (props) => {
-  const [open, setOpen] = useState(false);
+  const {isOpen, icon, handleOpen} = props;
 
   return (
     <li className='nav-item'>
       <span
         className='icon-button'
-        onClick={() => setOpen(!open)}
+        onClick={() => handleOpen()}
       >
-        <FontAwesomeIcon icon={props.icon} className='icon' />
+        <FontAwesomeIcon icon={icon} className='icon' />
       </span>
-      {open && props.children}
+      {isOpen && props.children}
     </li>
   )
 }

@@ -6,8 +6,14 @@ import { Link } from 'react-router-dom';
 const DropdownItem = (props) => {
 
   return (
-    <Link to={props.link} className="menu-item" onClick={props.logout}>
-      <NavItem className='icon-left' icon={props.leftIcon} />
+    <Link to={props.link} className="menu-item" onClick={()=> {
+      props.logout && props.logout();
+      props.handleClickItem();
+    }}>
+      <NavItem 
+        className='icon-left' 
+        icon={props.leftIcon} 
+      />
       {props.children}
     </Link>
   )
