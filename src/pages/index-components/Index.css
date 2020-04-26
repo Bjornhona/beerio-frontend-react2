@@ -1,0 +1,67 @@
+body {
+  background-image: url('./beers-background.jpg');
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -3;
+}
+
+.index-div {
+  min-height: 100%;
+  color: white;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.light-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  min-height: 100%;
+  width: 100%;
+  z-index: -2;
+}
+
+.dark-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(36, 38, 38, 0.9);
+  padding: 60px;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- typography ---- */
+
+.beerio-header {
+  font-family: 'Times Sans Serif', Arial;
+  text-transform: uppercase;
+  font-size: 26px;
+  line-height: normal;
+  font-style: bold;
+  letter-spacing: 5px;
+}
+
+.beerio-title {
+  font-family: MrsSaintDelafield-Regular;
+  font-size: 160px;
+  line-height: 160px;
+  padding-top: 60px;
+}
+
+.beerio-description {
+  font-family: 'Times Sans Serif', Montserrat-Regular;
+  font-size: 16px;
+  line-height: 32px;
+}

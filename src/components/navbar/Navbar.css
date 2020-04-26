@@ -2,7 +2,6 @@
   height: var(--nav-size);
   background-color: var(--bg);
   padding: 0 1rem;
-  border-bottom: var(--border);
 }
 
 .navbar-nav {
