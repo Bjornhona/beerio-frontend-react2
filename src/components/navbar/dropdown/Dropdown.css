@@ -9,6 +9,13 @@
   overflow: hidden;
 }
 
+.hi-user {
+  color: var(--text-color);
+  padding: 0.5rem;
+  margin: 7px 15px;
+
+}
+
 .dropdownRight {
   transform: translateX(-40%);
 }
