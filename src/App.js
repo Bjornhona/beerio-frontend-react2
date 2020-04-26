@@ -42,23 +42,23 @@ const App = () => {
   const [openLeft, setOpenLeft] = useState(false);
   const [openRight, setOpenRight] = useState(false);
 
-  // useEffect(() => {
-  //   document.addEventListener("mousedown", handleClick);
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
 
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClick);
-  //   };
-  // }, []);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
 
-  // const handleClick = (event) => {
-  //   if (node.current.contains(event.target)) {
-  //     // inside click
-  //     return;
-  //   }
-  //   // outside click 
-  //   //navigation menuToggleRight input.checkbox
-  // };
-
+  const handleOutsideClick = (event) => {
+    if (node.current.contains(event.target)) {
+      // inside click
+      return;
+    }
+    // outside click 
+    setOpenLeft(false);
+    setOpenRight(false);
+  };
 
   return (
     <AuthContext>
