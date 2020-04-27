@@ -44,24 +44,27 @@ const App = () => {
 
   const handleOutsideClick = (event) => {
     if (node.current.contains(event.target)) {
-      // inside click
       return;
     }
-    // outside click 
     setOpenLeft(false);
     setOpenRight(false);
   };
+
+  const handleClickItem = () => {
+    setOpenRight(false);
+    setOpenLeft(false);
+  }
 
   return (
     <AuthContext>
       <div className="app">
         <Navbar node={node}>
           <NavItem icon={faBars} isOpen={openLeft} handleOpen={() => setOpenLeft(!openLeft)}>
-            <Dropdown menuLeft handleClickItem={() => setOpenLeft(false)} />
+            <Dropdown menuLeft handleClickItem={handleClickItem} />
           </NavItem>
           <h2 className='nav-headline'>Beerio</h2>
           <NavItem icon={faUser} isOpen={openRight} handleOpen={() => setOpenRight(!openRight)}>
-            <Dropdown menuRight handleClickItem={() => setOpenRight(false)} />
+            <Dropdown menuRight handleClickItem={handleClickItem} />
           </NavItem>
         </Navbar>
         <Switch>
