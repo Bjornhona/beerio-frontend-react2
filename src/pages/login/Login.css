@@ -1,4 +1,95 @@
-.login {
+.login-div {
+  min-height: 100%;
+  color: white;
+  text-align: center;
+}
+
+.login-background {
+  position: absolute;
+  top: var(--nav-size);
+  left: 0;
+  background-image: url('./beer-2166004_1920.jpg');
+  width: 100%;
+  height: calc(100% - var(--nav-size));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -3;
+}
+
+.light-overlay {
+  position: absolute;
+  left: 0;
+  top: var(--nav-size);
+  background-color: rgba(255, 255, 255, 0.2);
+  /* min-height: 100%; */
+  min-height: calc(100% - var(--nav-size));
+  width: 100%;
+  z-index: -2;
+}
+
+.login-box {
+  position: absolute;
+  top: calc(50% + var(--nav-size)/2);
+  right: 50%;
+  transform: translate(0, -50%);
+  background-color: var(--text-color);
+  padding: 60px;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Typhography ---- */
+
+.beerio-logo {
+  font-family: MrsSaintDelafield-Regular;
+  font-size: 90px;
+  line-height: 90px;
+  padding-bottom: 5px;
+  color: var(--medium-brown);
+}
+
+.login-description {
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.login-footer {
+  color: var(--bg-accent);
+  padding-top: 30px;
+}
+
+.signup-text {
+  font-family: Montserrat-Bold;
+  color: var(--medium-brown);
+}
+
+input[type=text], input[type=password] {
+  border: none;
+  background-color: white;
+  /* color: var(--text-color); */
+  /* color: var(--leighter-grey); */
+  font-size: 12px;
+  font-family: Montserrat-Medium;
+  padding: 0 30px;
+  height: 45px;
+  margin: 15px 0;
+  width: 100%;
+}
+
+input[type=submit]:hover {
+  color: white;
+}
+
+/* .login {
   display: flex;
   flex-direction: column;
   margin-top: 15px;
@@ -16,11 +107,11 @@
 
 .section {
   margin: 30px;
-}
+}*/
 
 /* ---- button ---- */
 
-.beer-button {
+/*.beer-button {
   display: flex;
   font-weight: 600;
   text-transform: uppercase;
@@ -48,14 +139,14 @@
   .beer-button {
     width: 200px;
   }
-}
+}*/
 
 /* ---- layout ---- */
 
-@media (max-width: 479px) {
+/*@media (max-width: 479px) {
 
   .section {
     margin: 0 7px;
   }
 
-}
+} */

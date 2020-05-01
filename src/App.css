@@ -24,8 +24,13 @@ body {
 /* ---- generic for menus ---- */
 
 :root {
+  --light-brown: #EEE6DA;
+  --lighter-brown: #D2BB93;
+  --medium-brown: #99804E;
+  --dark-brown: #513E29;
   --bg: #242626;
   --bg-accent: #484a4d;
+  --lighter-grey: #ABACB1;
   --text-color: #dadce1;
   --nav-size: 60px;
   --border: 1px solid #474a4d;
@@ -78,8 +83,12 @@ h6 {
 
 p {
   margin: 0;
-  letter-spacing: 2px;
+  padding: 0;
+  letter-spacing: 1px;
+  font-family: Montserrat-Regular, 'Times Sans Serif';
   font-size: 12px;
+  line-height: 16px;
+  color: var(--bg);
 }
 
 input[type=submit] {
@@ -89,7 +98,7 @@ input[type=submit] {
   font-size: 12px;
 }
 
-input[type=text], input[type=password] {
+/* input[type=text], input[type=password] {
   border: none;
   border-radius: 30px;
   background-color: white;
@@ -102,7 +111,7 @@ input[type=text], input[type=password] {
 
 input[type=submit]:hover {
   color: white;
-}
+} */
 
 .section {
   margin: 30px;
@@ -127,11 +136,11 @@ input[type=submit]:hover {
 
 /* ---- login and signup ---- */
 
-.login, .signup {
+/* .login, .signup {
   display: flex;
   flex-direction: column;
   margin-top: 15px;
-}
+} */
 
 .alert h5 {
   color: #513e29;

@@ -20,7 +20,7 @@ const Dropdown = (props) => {
         <DropdownItem leftIcon={faUserPlus} link={"/signup"} handleClickItem={handleClickItem}>Signup</DropdownItem>
       </ul> :
     <ul className="dropdown dropdownLeft">
-      <DropdownItem leftIcon={faHome} link={'/home'} handleClickItem={handleClickItem}>Home</DropdownItem>
+      <DropdownItem leftIcon={faHome} link={"/home"} handleClickItem={handleClickItem}>Home</DropdownItem>
       <DropdownItem leftIcon={faBeer} link={"/beers"} handleClickItem={handleClickItem}>Beers</DropdownItem>
       <DropdownItem leftIcon={faHeart} link={"/favorites"} handleClickItem={handleClickItem}>Favorites</DropdownItem>
       <DropdownItem leftIcon={faThumbsUp} link={"/recommended"} handleClickItem={handleClickItem}>Recommended</DropdownItem>
