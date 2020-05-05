@@ -3,7 +3,6 @@ import './Login.css';
 import auth from '../../lib/auth-service';
 import { Link, useHistory } from 'react-router-dom';
 import { withAuth } from '../../lib/authContext';
-import Button from '../../components/button/Button';
 
 const Login = (props) => {
   const history = useHistory();
@@ -27,10 +26,10 @@ const Login = (props) => {
       const { data } = error.response;
       switch(data.error){
         case 'not-found':
-          setState(prevState => ({ ...prevState, alert: 'Invalid username or password' }));
+          setState(prevState => ({ ...prevState, alert: '*Invalid username or password' }));
           break;
         case 'validation':
-          setState(prevState => ({ ...prevState, alert: 'Username or password can´t be empty' }));
+          setState(prevState => ({ ...prevState, alert: '*Username or password can´t be empty' }));
           break;
         default:
           setState(prevState => ({ ...prevState, alert: '' }));
@@ -48,21 +47,18 @@ const Login = (props) => {
       <span className="login-background"></span>
       <span className="light-overlay"></span>
       <span className="login-box">
-        {/* <div className="section"> */}
-          <p className="beerio-logo">Beerio</p>
-          <p className="login-description">Welcome back, log in to enter the world of beers!</p>
-        {/* </div> */}
+        <h1>Beerio</h1>
+        <h5>Welcome back, log in to enter the world of beers!</h5>
         <form onSubmit={handleFormSubmit} className="login-form">
-          {/* <div className="login"> */}
-            <input type="text" name="username" placeholder="Username" value={state.username} onChange={handleChange} />
-            <input type="password" name="password" placeholder="Password" value={state.password} onChange={handleChange} />
-              <input type="submit" value="Log in" className="common-button" />
-            <p className="login-footer">Don´t have an account yet? 
-              <Link to={"/signup"} className="signup-text"> Sign up</Link>
-            </p>
-          {/* </div> */}
+          <input type="text" name="username" placeholder="Username" value={state.username} onChange={handleChange} />
+          <input type="password" name="password" placeholder="Password" value={state.password} onChange={handleChange} />
+          <input type="submit" value="Log in" className="common-button login-button" />
+          {/* { state.alert ? <div className="alert"><h5>{state.alert}</h5></div> : null} */}
+          <div className={state.alert ? "alert" : "hiddenAlert"}><h5>{state.alert}</h5></div>
+          <p className="login-footer">Don´t have an account yet? 
+            <Link to={"/signup"} className="signup-text"> Sign up</Link>
+          </p>
         </form>
-        { state.alert ? <div className="section alert"><h5>{state.alert}</h5></div> : <div></div>}
       </span>
     </div>
   )

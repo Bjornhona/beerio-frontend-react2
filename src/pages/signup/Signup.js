@@ -27,10 +27,10 @@ const Signup = (props) => {
         const { data } = error.response;
         switch(data.error){
           case 'empty':
-            setState(prevState => ({ ...prevState, alert: 'Username or password can´t be empty' }));
+            setState(prevState => ({ ...prevState, alert: '*Username or password can´t be empty' }));
             break;
           case 'username-not-unique':
-            setState(prevState => ({ ...prevState, alert: 'User already exists' }));
+            setState(prevState => ({ ...prevState, alert: '*User already exists' }));
             break;
           default:
             setState(prevState => ({ ...prevState, alert: '' }));
@@ -45,22 +45,23 @@ const Signup = (props) => {
 
   const { username, password, alert } = state;
   return (
-    <div className="index-div">
-      <div className="section">
-        <h2>Sign up</h2>
-        <p>Become a part of this world of beers and sign up today!</p>
-        <form onSubmit={handleFormSubmit} className="signup">
-          <label>Username:</label>
-          <input type="text" name="username" value={username} onChange={handleChange} />
-          <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={handleChange} />
-          <input type="submit" value="Sign up" className="beer-container beer-button beer-top" />
-          <p>Already have account? 
-            <Link to={"/login"}> Log in</Link>
-          </p>
+    <div className="signup-div">
+      <span className="signup-background"></span>
+      <span className="signup-overlay"></span>
+      <span className="signup-box">
+          <h1>Beerio</h1>
+          <h5>Become a part of this world of beers and sign up today!</h5>
+        <form onSubmit={handleFormSubmit} className="signup-form">
+            <input type="text" name="username" placeholder="Username" value={username} onChange={handleChange} />
+            <input type="password" name="password" placeholder="Password" value={password} onChange={handleChange} />
+            <input type="submit" value="Sign up" className="common-button signup-button" />
+            {/* { alert ? <div className="alert"><h5>{alert}</h5></div> : null} */}
+            <div className={alert ? "alert" : "hiddenAlert"}><h5>{alert}</h5></div>
+            <p className="signup-footer">Already have an account?  
+              <Link to={"/login"} className="login-text"> Log in</Link>
+            </p>
         </form>
-        { alert ? <div className="section alert"><h5>{alert}</h5></div> : <div></div>}
-      </div>
+      </span>
     </div>
   );
 }

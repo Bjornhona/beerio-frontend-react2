@@ -6,10 +6,9 @@ const Button = (props) => {
   const { link, text } = props;
 
   return (
-    <div>
-        <Link to={link} className="common-button"><p>{text}</p></Link>
-        {props.children}
-    </div>
+      <Link to={link} className="common-button">
+        <p>{text}</p>
+      </Link>
   );
 }
 

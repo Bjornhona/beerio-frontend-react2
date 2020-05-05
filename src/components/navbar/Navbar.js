@@ -6,7 +6,9 @@ const { node } = props;
 
   return (
     <nav className='navbar' ref={node}>
-      <ul className='navbar-nav'>{ props.children }</ul>
+      <ul className='navbar-nav'>
+        { props.children }
+      </ul>
     </nav>
   )
 }

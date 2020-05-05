@@ -15,11 +15,21 @@ body {
   background-image: linear-gradient(#99804e, #d2bb93, #eee6da);
   min-height: 100%;
   background-repeat: no-repeat;
-  color: #111;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 147%;
+  color: var(--bg);
+  font-family: Montserrat-Regular, 'Times Sans Serif', sans-serif;
+  font-size: 12px;
 }
+
+.section {
+  margin: 60px;
+}
+
+@media (max-width: 479px) {
+  .section {
+    margin: 0 7px;
+  }
+}
+
 
 /* ---- generic for menus ---- */
 
@@ -45,76 +55,66 @@ ul {
 }
 
 a {
-  color: var(--text-color);
+  color: var(--bg);
   text-decoration: none;
 }
 
+input[type=text], input[type=password] {
+  border: none;
+  background-color: white;
+  font-size: 12px;
+  font-family: Montserrat-Regular;
+  padding: 0 30px;
+  height: 45px;
+  margin: 0 0 15px 0;
+  width: 100%;
+}
+
+input[type=submit]:hover {
+  color: white;
+}
+
+
 /* ---- typography ---- */
 
-h1, h2, h3, h4, h5 {
-  letter-spacing: 2px;
+h1, h2, h3, h4, h5, p {
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1px;
+  line-height: 180%;
 }
 
 h1 {
-  font-size: 32px;
-  line-height: 147%;
+  font-family: MrsSaintDelafield-Regular;
+  font-size: 80px;
+  line-height: 75px;
+  color: var(--medium-brown);
 }
 
 h2 {
-  margin-bottom: 10px;
+  font-family: 'Times Sans Serif', Arial;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-style: bold;
+  letter-spacing: 3px;
 }
 
 h3 {
-  font-size: 19px;
+  font-size: 28px;
 }
 
 h4 {
   font-size: 16px;
-  margin-bottom: 0;
+  font-weight: bold;
 }
 
 h5 {
   font-size: 14px;
 }
 
-h6 {
-  font-size: 12px;
-}
-
 p {
-  margin: 0;
-  padding: 0;
-  letter-spacing: 1px;
-  font-family: Montserrat-Regular, 'Times Sans Serif';
   font-size: 12px;
-  line-height: 16px;
-  color: var(--bg);
-}
-
-input[type=submit] {
-  border: none;
-  border-radius: 30px;
-  color: #513e29;
-  font-size: 12px;
-}
-
-/* input[type=text], input[type=password] {
-  border: none;
-  border-radius: 30px;
-  background-color: white;
-  color: #513e29;
-  box-shadow: inset 2px 2px 5px #99804e;
-  font-size: 12px;
-  padding: 15px;
-  margin-bottom: 15px;
-}
-
-input[type=submit]:hover {
-  color: white;
-} */
-
-.section {
-  margin: 30px;
 }
 
 /* ---- App ---- */
@@ -124,27 +124,6 @@ input[type=submit]:hover {
   text-transform: uppercase;
 }
 
-/* ---- layout ---- */
-
-@media (max-width: 479px) {
-
-  .section {
-    margin: 0 7px;
-  }
-
-}
-
-/* ---- login and signup ---- */
-
-/* .login, .signup {
-  display: flex;
-  flex-direction: column;
-  margin-top: 15px;
-} */
-
-.alert h5 {
-  color: #513e29;
-}
 
 /* ---- beers ---- */
 
@@ -153,7 +132,7 @@ input[type=submit]:hover {
   align-items: center;
 }
 
-.beers-title h4 {
+.beers-title {
   margin-top: 0;
 }
 

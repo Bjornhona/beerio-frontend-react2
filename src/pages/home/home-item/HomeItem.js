@@ -4,18 +4,16 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const HomeItem = (props) => {
-  const { link, h2Text, pText, iconName, iconClass } = props;
+  const { link, headerText, description, iconName, iconClass } = props;
 
   return (
-    <Link to={link} >
-      <div className='home-container'>
-        <div className="home-text">
-          <h2>{h2Text.toUpperCase()}</h2>
-          <p>{pText}</p>
-        </div>
-        <div className="home-icon">
-          <FontAwesomeIcon icon={iconName} className={iconClass} />
-        </div>
+    <Link to={link} className='home-container'>
+      <div className="home-text">
+        <h4>{headerText.toUpperCase()}</h4>
+        <p>{description}</p>
+      </div>
+      <div className="home-icon">
+        <FontAwesomeIcon icon={iconName} className={iconClass} />
       </div>
     </Link>
   )
