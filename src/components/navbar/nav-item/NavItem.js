@@ -9,7 +9,7 @@ const NavItem = (props) => {
     <li className='nav-item'>
       <span
         className='icon-button'
-        onClick={() => handleOpen()}
+        onClick={handleOpen}
       >
         <FontAwesomeIcon icon={icon} className='icon' />
       </span>

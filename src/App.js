@@ -33,6 +33,8 @@ const App = () => {
   const node = useRef();
   const [openLeft, setOpenLeft] = useState(false);
   const [openRight, setOpenRight] = useState(false);
+  console.log(openLeft);
+  console.log(openRight);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleOutsideClick);
@@ -68,14 +70,14 @@ const App = () => {
           </NavItem>
         </Navbar>
         <Switch>
-          <Route exact path="/"><Index /></Route>
-           <PublicRoute path="/signup"><Signup /></PublicRoute>
-           <PublicRoute path="/login"><Login /></PublicRoute>
-           <PrivateRoute path="/home"><Home /></PrivateRoute>
-           <PrivateRoute exact path="/beers"><Beers/></PrivateRoute>
+          <Route exact path="/" component={Index} />
+           <PublicRoute path="/signup" component={Signup} />
+           <PublicRoute path="/login" component={Login} />
+           <PrivateRoute path="/home" component={Home} />
+           <PrivateRoute exact path="/beers" component={Beers} />
            <PrivateRoute path="/favorites" component={Favorites} />
            <PrivateRoute path="/recommended" component={Recommended} />
-           <PrivateRoute path="/beers/:id"><Beer /></PrivateRoute>
+           <PrivateRoute path="/beers/:id" component={Beer} />
            <PrivateRoute path="/play" component={Play} />
            <Route component={NotFound} />
          </Switch>
