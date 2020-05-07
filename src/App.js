@@ -33,8 +33,6 @@ const App = () => {
   const node = useRef();
   const [openLeft, setOpenLeft] = useState(false);
   const [openRight, setOpenRight] = useState(false);
-  console.log(openLeft);
-  console.log(openRight);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleOutsideClick);
@@ -64,7 +62,10 @@ const App = () => {
           <NavItem icon={faBars} isOpen={openLeft} handleOpen={() => setOpenLeft(!openLeft)}>
             <Dropdown menuLeft handleClickItem={handleClickItem} />
           </NavItem>
-          <h2 className='nav-headline'>Beerio</h2>
+          <div className="header-logo-container">
+            <img src="Beerio-192.png" alt="beer logo" className="logo-image" />
+            <h2 className='nav-headline'>Beerio</h2>
+          </div>
           <NavItem icon={faUser} isOpen={openRight} handleOpen={() => setOpenRight(!openRight)}>
             <Dropdown menuRight handleClickItem={handleClickItem} />
           </NavItem>

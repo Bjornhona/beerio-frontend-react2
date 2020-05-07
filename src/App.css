@@ -124,6 +124,18 @@ p {
   text-transform: uppercase;
 }
 
+.header-logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
 
 /* ---- beers ---- */
 
