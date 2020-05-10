@@ -33,6 +33,12 @@ const Home = () => {
           iconName='thumbs-up' 
           iconClass='fontawesome' />
         <HomeItem 
+          link='/breweries' 
+          headerText='Breweries' 
+          description='Learn from the best breweries' 
+          iconName='beer' 
+          iconClass='fontawesome' />
+        <HomeItem 
           link='/play' 
           headerText='Play' 
           description='Your beer personality' 

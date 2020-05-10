@@ -17,6 +17,8 @@ import Recommended from './pages/recommended/Recommended';
 import NotFound from './pages/not-found/NotFound';
 import Beer from './pages/beer/Beer';
 import Play from './pages/play/Play';
+import Breweries from './pages/breweries/Breweries';
+// import Brewery from './pages/brewery/Brewery';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
@@ -26,8 +28,9 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBeer } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faPlayCircle, faSearch, faHeart, faStar, faThumbsUp, faUser, faBars);
+library.add(faPlayCircle, faSearch, faHeart, faStar, faThumbsUp, faUser, faBars, faBeer);
 
 const App = () => {
   const node = useRef();
@@ -79,6 +82,8 @@ const App = () => {
            <PrivateRoute path="/favorites" component={Favorites} />
            <PrivateRoute path="/recommended" component={Recommended} />
            <PrivateRoute path="/beers/:id" component={Beer} />
+           <PrivateRoute path="/breweries" component={Breweries} />
+           {/* <PrivateRoute path="/breweries/:id" component={Brewery} /> */}
            <PrivateRoute path="/play" component={Play} />
            <Route component={NotFound} />
          </Switch>

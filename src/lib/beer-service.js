@@ -32,6 +32,12 @@ class BeerService {
     .then(({data}) => data)
     .catch(error => console.error('Error'));
   }
+
+  getBreweries() {
+    return this.beer.get('/beers/breweries')
+    .then(({data}) => data)
+    .catch(error => console.error('Error'));
+  }
    
 }
 
