@@ -60,7 +60,7 @@ const App = () => {
 
   return (
     <AuthContext>
-      <div className="app">
+      <div className="app" data-testid="app">
         <Navbar node={node}>
           <NavItem icon={faBars} isOpen={openLeft} handleOpen={() => setOpenLeft(!openLeft)}>
             <Dropdown menuLeft handleClickItem={handleClickItem} />
