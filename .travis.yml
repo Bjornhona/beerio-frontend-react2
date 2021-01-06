@@ -9,3 +9,16 @@ before_install:
 
 script:
   - docker run -e CI=true bjornhona/beerio-frontend-react npm run test
+
+deploy: 
+  provider: elasticbeanstalk
+  region: "eu-west-3"
+  app: "beerio-frontend"
+  env: "BeerioFrontend-env"
+  bucket_name: "elasticbeanstalk-eu-west-3-282256770189"
+  bucket_path: "beerio-frontend"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
